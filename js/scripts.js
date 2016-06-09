@@ -1,5 +1,5 @@
 /*This file is for your custom js.  All yours*/
-var romanNumeral = function(integer){
+var romanNumeral = function(integer) {
   if (integer >= 4000 || integer <= 0) {
     return false;
   }
@@ -7,7 +7,9 @@ var romanNumeral = function(integer){
   var string = integer.toString();
   var array = string.split("");
   var reverseArray = array.reverse();
+
   debugger;
+
   if (reverseArray[0] === "0") {
     reverseArray[0] = "";
   } else if (reverseArray[0] === "1") {
@@ -74,8 +76,19 @@ var romanNumeral = function(integer){
     reverseArray[2] = "CM";
   }
 
+  if (reverseArray[3] === "0") {
+    reverseArray[3] = "";
+  } else if (reverseArray[3] === "1") {
+    reverseArray[3] = "M";
+  } else if (reverseArray[3] === "2") {
+    reverseArray[3] = "MM";
+  } else if (reverseArray[3] === "3") {
+    reverseArray[3] = "MMM";
+  }
+
   var output = reverseArray.reverse().join("");
   return output;
+
 }
 
 $(document).ready(function(){
