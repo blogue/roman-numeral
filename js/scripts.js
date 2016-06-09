@@ -5,7 +5,7 @@ var romanNumeral = function(integer){
   }
 
   var string = integer.toString();
-  var array = string.split();
+  var array = string.split("");
   var reverseArray = array.reverse();
   debugger;
   if (reverseArray[0] === "0") {
@@ -30,7 +30,29 @@ var romanNumeral = function(integer){
     reverseArray[0] = "IX";
   }
 
-  var output = reverseArray.join("");
+  if (reverseArray[1] === "0") {
+    reverseArray[1] = "";
+  } else if (reverseArray[1] === "1") {
+    reverseArray[1] = "X";
+  } else if (reverseArray[1] === "2") {
+    reverseArray[1] = "XX";
+  } else if (reverseArray[1] === "3") {
+    reverseArray[1] = "XXX";
+  } else if (reverseArray[1] === "4") {
+    reverseArray[1] = "XL";
+  } else if (reverseArray[1] === "5") {
+    reverseArray[1] = "L";
+  } else if (reverseArray[1] === "6") {
+    reverseArray[1] = "LX";
+  } else if (reverseArray[1] === "7") {
+    reverseArray[1] = "LXX";
+  } else if (reverseArray[1] === "8") {
+    reverseArray[1] = "LXXX";
+  } else if (reverseArray[1] === "9") {
+    reverseArray[1] = "XC";
+  }
+
+  var output = reverseArray.reverse().join("");
   return output;
 }
 
