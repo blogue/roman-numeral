@@ -1,6 +1,6 @@
 /*This file is for your custom js.  All yours*/
 var romanNumeral = function(integer){
-  if (integer >= 4000) {
+  if (integer >= 4000 || integer <= 0) {
     return false;
   }
 
@@ -50,6 +50,28 @@ var romanNumeral = function(integer){
     reverseArray[1] = "LXXX";
   } else if (reverseArray[1] === "9") {
     reverseArray[1] = "XC";
+  }
+
+  if (reverseArray[2] === "0") {
+    reverseArray[2] = "";
+  } else if (reverseArray[2] === "1") {
+    reverseArray[2] = "C";
+  } else if (reverseArray[2] === "2") {
+    reverseArray[2] = "CC";
+  } else if (reverseArray[2] === "3") {
+    reverseArray[2] = "CCC";
+  } else if (reverseArray[2] === "4") {
+    reverseArray[2] = "CD";
+  } else if (reverseArray[2] === "5") {
+    reverseArray[2] = "D";
+  } else if (reverseArray[2] === "6") {
+    reverseArray[2] = "DC";
+  } else if (reverseArray[2] === "7") {
+    reverseArray[2] = "DCC";
+  } else if (reverseArray[2] === "8") {
+    reverseArray[2] = "DCCC";
+  } else if (reverseArray[2] === "9") {
+    reverseArray[2] = "CM";
   }
 
   var output = reverseArray.reverse().join("");
