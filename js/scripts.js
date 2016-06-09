@@ -8,8 +8,6 @@ var romanNumeral = function(integer) {
   var array = string.split("");
   var reverseArray = array.reverse();
 
-  debugger;
-
   if (reverseArray[0] === "0") {
     reverseArray[0] = "";
   } else if (reverseArray[0] === "1") {
@@ -98,7 +96,12 @@ $(document).ready(function(){
     var userNumber = parseInt($("#arabic-numeral").val());
 
     var output = romanNumeral(userNumber);
+    if (output) {
+      $('#output').text(output);
+    } else {
+      alert("Please enter a positive integer between 1 and 3,999")
+      $(".form-group").addClass("has-error");
+    }
 
-    $('#output').text(output);
   });
 });
